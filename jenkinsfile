@@ -2,5 +2,21 @@ pipeline {
     tools {
         node 'node'
     }
-    steps
+    scripts {
+        script('Install'){
+            steps {
+                   bat 'npm install'
+            }
+        }
+        script('Test'){
+            steps {
+                echo 'No Test Defined'
+            }
+        }
+        script ('Build'){
+            steps{
+                bat 'npm run build'
+            }
+        }
+    }
 }
