@@ -2,18 +2,18 @@ pipeline {
     tools {
         node 'node'
     }
-    scripts {
-        script('Install'){
+    stages {
+        stage('Install'){
             steps {
                    bat 'npm install'
             }
         }
-        script('Test'){
+        stage('Test'){
             steps {
                 echo 'No Test Defined'
             }
         }
-        script ('Build'){
+        stage ('Build'){
             steps{
                 bat 'npm run build'
             }
