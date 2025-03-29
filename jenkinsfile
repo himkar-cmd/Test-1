@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('clean'){
+            steps {
+                bat 'npm cache clean --force'
+            }
+        }
         stage('Install'){
             steps {
                    bat 'npm install'
